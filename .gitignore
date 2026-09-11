@@ -1,0 +1,22 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+Thumbs.db
+
+# Generated simulation and paper outputs
+studies/application_analysis/results/
+studies/application_analysis/paper_case_analysis/data/
+studies/application_analysis/paper_case_analysis/figures/
+
+# LaTeX build products
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz

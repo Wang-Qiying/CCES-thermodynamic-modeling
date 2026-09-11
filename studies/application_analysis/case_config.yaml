@@ -1,0 +1,146 @@
+# PESIM application case: single representative configuration.
+# The water store is intentionally inactive because this pressure-ratio range
+# cannot recover useful compression heat for later turbine reheating.
+fluid: HEOS::CO2
+environment:
+  g: 9.80665
+  T_ambient: 293.15
+  T_surface: 293.15
+  geothermal_gradient: 0.03
+caverns:
+  H:
+    volume: 80000.0
+    radius: 25.0
+    depth: 2500.0
+    p_initial: 36250000.0
+    T_initial: 368.15
+    p_min: 16500000.0
+    p_max: 44000000.0
+    T_max: null
+    T_min: null
+  L:
+    volume: 100000.0
+    radius: 25.0
+    depth: 1200.0
+    p_initial: 19140000.0
+    T_initial: 329.15
+    p_min: 7920000.0
+    p_max: 21120000.0
+    T_max: null
+    T_min: null
+rock:
+  alpha: 10.0
+  density: 2160.0
+  cp: 850.0
+  conductivity: 5.0
+  thickness: 1.0
+  T_initial: 329.15
+  T_initial_by_cavern: {H: 368.15, L: 329.15}
+well:
+  enabled: true
+  diameter: 0.508
+  roughness: 0.00005
+  U: 2.0
+  segments: 24
+  friction: true
+  pressure_rating: null
+  mach_warning: 0.30
+  kinetic_head_warning_fraction: 0.01
+compressor:
+  eta_is: 0.80
+  eta_motor: 0.97
+  eta_mech: 0.99
+  power_max: 10000000.0
+  ratio_max: 3.0
+  T_out_max: 423.15
+turbine:
+  eta_is: 0.85
+  eta_generator: 0.97
+  eta_mech: 0.99
+  power_max: 10000000.0
+  ratio_max: 3.0
+  T_out_max: null
+exchangers:
+  charge: {UA: 0.0, beta: 0.000000001}
+  discharge: {UA: 0.0, beta: 0.000000001}
+  segments: 20
+  min_approach: 0.0
+  design_approach_diagnostic: 5.0
+  dp_ref: 100000.0
+  q_ref: 200.0
+  rho_ref_p: 10000000.0
+  rho_ref_T: 330.0
+water:
+  enabled: false
+  mass_total: 2000000.0
+  initial_hot_fraction: 0.02
+  min_fraction: 0.02
+  hot_capacity: 1960000.0
+  cold_capacity: 1960000.0
+  fixed_temperatures: true
+  T_hot_initial: 333.15
+  T_cold_initial: 303.15
+  cp: 4180.0
+  density: 1000.0
+  loss_conductance: 0.0
+  T_max: 368.15
+  T_min: null
+  absolute_pressure: 300000.0
+  pump_dp: 300000.0
+  pump_eta_total: 0.75
+  npsh_required: null
+auxiliary:
+  charge: {P0: 0.0, fraction: 0.0}
+  discharge: {P0: 0.0, fraction: 0.0}
+  idle_power: 0.0
+phase:
+  enabled: true
+  pressure_above_critical: 200000.0
+  temperature_above_critical: 1.0
+operation:
+  q_charge: 100.0
+  q_discharge: 100.0
+  q_min: 50.0
+  q_max: 500.0
+  endpoint_margin_floor: 0.02
+  endpoint_margin_increment: 0.01
+  endpoint_margin_max: 0.20
+  active_duration_max: 86400.0
+  charge_mass_fraction: 0.98
+  enforce_reversible_charge: true
+  reversible_reserve_fraction: 0.98
+  match_discharge_mass_to_charge: true
+  idle_duration: 7200.0
+  require_positive_net_power: true
+engineering:
+  pressure_rate_max: null
+  temperature_rate_max: null
+  surface_CO2_inventory_volume: null
+scales:
+  pressure: 1000000.0
+  temperature: 10.0
+  power: 1000000.0
+  flow: 100.0
+  water_mass_fraction: 0.10
+  ratio: 1.0
+  approach: 5.0
+  pressure_rate: 1000.0
+  temperature_rate: 0.001
+  length: 1.0
+numerics:
+  property_h_tolerance: 0.0000001
+  property_p_tolerance: 0.001
+  property_flash_max_iterations: 6
+  max_step: 120.0
+  output_interval: 60.0
+  rtol: 0.0000001
+  atol: [0.01, 1000.0, 1000.0, 0.000001, 0.000001, 0.01, 0.000001, 0.000001]
+  energy_atol: 100.0
+  pressure_xtol: 0.05
+  heat_xtol: 0.001
+  UA_residual_tolerance: 0.1
+  pressure_search_min: 1000000.0
+  pressure_search_max: 60000000.0
+  pressure_bracket_points: 24
+  event_time_xtol: 0.001
+  event_margin_tolerance: 0.00000001
