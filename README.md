@@ -141,7 +141,7 @@ unevaluated engineering constraints require separate assessment.
 
 ## Citation and license
 
-See `CITATION.md` for an IEEE `bibitem` template. Replace its author and URL
-placeholders after creating the public repository. No software license has been
-selected in this package; add an appropriate license before public release if
-reuse or redistribution is intended.
+See `CITATION.md` for an IEEE `bibitem` and `CITATION.cff` for GitHub citation
+metadata. No software license has been selected in this package; add an
+appropriate license before public release if reuse or redistribution is
+intended.

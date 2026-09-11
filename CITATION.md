@@ -1,16 +1,16 @@
 # Citation
 
-Replace `<AUTHOR(S)>` with the paper's author list before citing the repository.
+Use the following IEEE-style citation for this repository.
 
 ## IEEE `bibitem`
 
 ```latex
-\bibitem{dual_cavern_sco2_code}
-<AUTHOR(S)>, ``Dynamic supercritical CO$_2$ dual-cavern energy storage model
+\bibitem{wang2026cces}
+Q. Wang, ``Dynamic supercritical CO$_2$ dual-cavern energy storage model
 with real-fluid properties and wellbore dynamics,'' GitHub repository, 2026.
 [Online]. Available:
 \url{https://github.com/Wang-Qiying/CCES-thermodynamic-modeling}.
-Accessed: <Month day, year>.
+Accessed: Sep. 11, 2026.
 ```
 
 The manuscript must load `\usepackage{url}` or `\usepackage{hyperref}` for the

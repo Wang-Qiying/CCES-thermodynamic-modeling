@@ -3,8 +3,8 @@ message: "If you use this software, please cite the versioned repository."
 title: "Dynamic Supercritical CO2 Dual-Cavern Energy Storage Model"
 type: software
 authors:
-  - family-names: "REPLACE_WITH_FAMILY_NAME"
-    given-names: "REPLACE_WITH_GIVEN_NAMES"
+  - family-names: "Wang"
+    given-names: "Qiying"
 repository-code: "https://github.com/Wang-Qiying/CCES-thermodynamic-modeling"
 version: "1.0.0"
 date-released: "2026-09-11"
